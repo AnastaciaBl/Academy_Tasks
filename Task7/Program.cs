@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task7
 {
@@ -10,6 +6,9 @@ namespace Task7
     {
         static void Main(string[] args)
         {
+            NaturalNumbers numbers = new NaturalNumbers(0);
+            Console.WriteLine(numbers.ToString());
+            Console.ReadLine();
         }
     }
 }
