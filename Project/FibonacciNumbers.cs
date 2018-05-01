@@ -22,8 +22,16 @@ namespace Task8
 
         public FibonacciNumbers(double lowerBound, double upperBound)
         {
-            LowerBound = lowerBound;
-            UpperBound = upperBound;
+            if (lowerBound <= upperBound)
+            {
+                LowerBound = lowerBound;
+                UpperBound = upperBound;
+            }
+            else
+            {
+                LowerBound = upperBound;
+                UpperBound = lowerBound;
+            }
             Numbers = CreateSetOfNumbers();
         }
 

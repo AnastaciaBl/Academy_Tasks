@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckUserInput.cs" />
     <Compile Include="HappyTickets.cs" />
     <Compile Include="ICount.cs" />
     <Compile Include="MoskovCount.cs" />
