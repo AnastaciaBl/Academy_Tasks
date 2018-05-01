@@ -1,0 +1,6 @@
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task5\bin\Debug\Task5.exe.config
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task5\bin\Debug\Task5.exe
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task5\bin\Debug\Task5.pdb
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task5\obj\Debug\Task5.csprojResolveAssemblyReference.cache
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task5\obj\Debug\Task5.exe
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task5\obj\Debug\Task5.pdb
