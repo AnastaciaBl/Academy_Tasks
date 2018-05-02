@@ -9,7 +9,7 @@ namespace Task4
 
         public WordChange(string path, string oldWord, string newWord):base(path)
         {
-            OldWord = oldWord;
+            OldWord = oldWord.ToLower();
             NewWord = newWord;
             changeText();
         }

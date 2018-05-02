@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task6
+namespace Task5
 {
     static class CheckUserInput
     {
@@ -22,27 +22,15 @@ namespace Task6
             try
             {
                 double d = Convert.ToInt32(str);
-                return true;
+                if (d >= 0 && d <= 999)
+                    return true;
+                else
+                    return false;
             }
             catch
             {
                 return false;
             }
-        }
-
-        public static bool IsCorrectTicketNumber(string str)
-        {
-            if (str.Length != 6)
-                return false;
-            else
-            {
-                for (int i = 0; i < str.Length; i++)
-                {
-                    if (!IsIntegerNumber(Convert.ToString(str[i])))
-                        return false;
-                }
-            }
-            return true;
         }
     }
 }

@@ -7,7 +7,7 @@
 
         public WordCounter(string path, string wordForCount):base(path)
         {
-            CountWord = wordForCount;
+            CountWord = wordForCount.ToLower();
             AmountOfCountWordInText = findAmountOfCountWord();
         }
 

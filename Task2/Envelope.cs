@@ -21,11 +21,11 @@ namespace Task2
             }
         }
 
-        public bool IsFitsIntoThisEnvelope(Envelope otherEnvelope)
+        public string IsFitsIntoThisEnvelope(Envelope otherEnvelope)
         {
             if (isFitsIntoFirstCondition(otherEnvelope) || isFitsIntoSecondCondition(otherEnvelope))
-                return true;
-            else return false;
+                return "Yes, second envelope fits into the first.";
+            else return "No, second envelope does not fits into the first.";
         }
 
         private bool isFitsIntoFirstCondition(Envelope other)

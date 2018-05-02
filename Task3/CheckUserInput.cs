@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task6
+namespace Task3
 {
     static class CheckUserInput
     {
@@ -30,19 +30,11 @@ namespace Task6
             }
         }
 
-        public static bool IsCorrectTicketNumber(string str)
+        public static bool IsCorrectSizeOfSides(double a, double b, double c)
         {
-            if (str.Length != 6)
-                return false;
-            else
-            {
-                for (int i = 0; i < str.Length; i++)
-                {
-                    if (!IsIntegerNumber(Convert.ToString(str[i])))
-                        return false;
-                }
-            }
-            return true;
+            if (a + b > c && a + c > b && b + c > a)
+                return true;
+            else return false;
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Task5
     class Hundreds: ICreateStringRepresentation
     {
         private string[] hundreds = new string[] { "", "сто ", "двести ", "триста ", "четыреста ", "пятьсот ", "шестьсот ",
-            "семьсот ", "восемсот ", "девятсот " };
+            "семьсот ", "восемьсот ", "девятьсот " };
 
         public string ReturnStringValue(string str)
         {
