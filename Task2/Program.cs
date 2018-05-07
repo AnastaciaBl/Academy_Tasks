@@ -27,6 +27,7 @@ namespace Task2
                     break;
                 }
                 Console.WriteLine(answer, first.IsFitsIntoThisEnvelope(second));
+                Console.WriteLine(answer, second.IsFitsIntoThisEnvelope(first));
                 Console.WriteLine(startAgain);
                 endCheck = Console.ReadLine();
             } while (endCheck.ToLower() == "y");

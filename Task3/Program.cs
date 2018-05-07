@@ -6,8 +6,8 @@ namespace Task3
     class Program
     {
         private static string startInfo = "Task #3. Find area of triangles.";
-        private static string nameInput = "Input a triangle`s name, please.";
-        private static string numberInput = "Input {0} triangle`s side, please.";
+        private static string inputLine = "Input <triangle name> <A length> <B length> <C length> please.";
+        private static string correctInput = "Input a right information, please.";
         private static string errorSides = "This triangle can`t exist.";
         private static string startAgain = "Do you want to start a program again? y/n";
         private static string inputAgain = "Do you want to input another triangle? y/n";
@@ -15,7 +15,7 @@ namespace Task3
 
         static void Main(string[] args)
         {
-            string a, b, c, name = string.Empty, endCheck = string.Empty;
+            string input = string.Empty, endCheck = string.Empty;
             do
             {
                 string endInput = "y";
@@ -23,33 +23,29 @@ namespace Task3
                 Console.WriteLine(startInfo);
                 while (true && (endInput.ToLower() == "y" || endInput.ToLower() == "yes"))
                 {
-                    Console.WriteLine(nameInput);
-                    name = Console.ReadLine();
-                    while (true)
+                    Console.WriteLine(inputLine);
+                    input = Console.ReadLine();
+                    string[] partsOfStr = replaceSpaces(input);
+                    if (partsOfStr.Length == 4)
                     {
-                        a = inputSide("A");
-                        if (CheckUserInput.IsDoubleNumber(a))
-                            break;
+                        try
+                        {
+                            if (CheckUserInput.IsCorrectSizeOfSides(Convert.ToDouble(partsOfStr[1]),
+                                Convert.ToDouble(partsOfStr[2]), Convert.ToDouble(partsOfStr[3])))
+                            {
+                                triangles.Add(new Triangle(partsOfStr[0], Convert.ToDouble(partsOfStr[1]),
+                                    Convert.ToDouble(partsOfStr[2]), Convert.ToDouble(partsOfStr[3])));
+                                Console.WriteLine(inputAgain);
+                                endInput = Console.ReadLine();
+                            }
+                            else Console.WriteLine(errorSides);
+                        }
+                        catch { Console.WriteLine(correctInput); }
                     }
-                    while (true)
+                    else
                     {
-                        b = inputSide("B");
-                        if (CheckUserInput.IsDoubleNumber(b))
-                            break;
+                        Console.WriteLine(correctInput);
                     }
-                    while (true)
-                    {
-                        c = inputSide("B");
-                        if (CheckUserInput.IsDoubleNumber(c))
-                            break;
-                    }
-                    if (CheckUserInput.IsCorrectSizeOfSides(Convert.ToDouble(a), Convert.ToDouble(b), Convert.ToDouble(c)))
-                    {
-                        triangles.Add(new Triangle(name, Convert.ToDouble(a), Convert.ToDouble(b), Convert.ToDouble(c)));
-                        Console.WriteLine(inputAgain);
-                        endInput = Console.ReadLine();
-                    }
-                    else Console.WriteLine(errorSides);
                 }
                 Console.WriteLine(answer);
                 triangles.Sort();
@@ -60,10 +56,22 @@ namespace Task3
             } while (endCheck.ToLower() == "y");
         }
 
-        private static string inputSide(string nameOfSide)
+        private static string[] replaceSpaces(string line)
         {
-            Console.WriteLine(numberInput, nameOfSide);
-            return Console.ReadLine();
+            while (true)
+            {
+                if(line.Contains(","))
+                    line = line.Replace(",", " ");
+                else if (line.Contains("\t"))
+                    line = line.Replace("\t", " ");
+                else if (line.Contains("  "))
+                    line = line.Replace("  ", " ");
+                else
+                {
+                    line = line.TrimStart().TrimEnd();
+                    return line.Split(' ');
+                }
+            }
         }
     }
 }

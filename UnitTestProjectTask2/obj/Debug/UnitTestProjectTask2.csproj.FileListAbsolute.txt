@@ -1,0 +1,7 @@
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask2\bin\Debug\UnitTestProjectTask2.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask2\bin\Debug\UnitTestProjectTask2.pdb
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask2\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask2\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask2\obj\Debug\UnitTestProjectTask2.csprojResolveAssemblyReference.cache
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask2\obj\Debug\UnitTestProjectTask2.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask2\obj\Debug\UnitTestProjectTask2.pdb

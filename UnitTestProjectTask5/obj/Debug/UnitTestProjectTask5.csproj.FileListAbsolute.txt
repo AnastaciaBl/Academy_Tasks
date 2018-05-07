@@ -1,0 +1,6 @@
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask5\bin\Debug\UnitTestProjectTask5.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask5\bin\Debug\UnitTestProjectTask5.pdb
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask5\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask5\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask5\obj\Debug\UnitTestProjectTask5.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask5\obj\Debug\UnitTestProjectTask5.pdb

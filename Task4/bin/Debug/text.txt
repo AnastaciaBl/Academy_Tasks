@@ -1,4 +1,2 @@
-text which i want to change. 
-text about smt.
-
-
+Newtext which i want to change. 
+Newtext about smt.
