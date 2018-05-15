@@ -11,8 +11,8 @@ namespace UnitTestProjectTask2
         {
             Envelope e1 = new Envelope(10, 5);
             Envelope e2 = new Envelope(15, 20);
-            string expected = "Yes, envelope (10x5) fits into another.";
-            string actual = e2.IsFitsIntoThisEnvelope(e1);
+            bool expected = true;
+            bool actual = e2.IsFitsIntoThisEnvelope(e1);
             Assert.AreEqual(expected, actual);
         }
 
@@ -21,8 +21,8 @@ namespace UnitTestProjectTask2
         {
             Envelope e1 = new Envelope(10, 5);
             Envelope e2 = new Envelope(15, 20);
-            string expected = "No, envelope (20x15) does not fits into another.";
-            string actual = e1.IsFitsIntoThisEnvelope(e2);
+            bool expected = false;
+            bool actual = e1.IsFitsIntoThisEnvelope(e2);
             Assert.AreEqual(expected, actual);
         }
 
@@ -31,8 +31,8 @@ namespace UnitTestProjectTask2
         {
             Envelope e1 = new Envelope(10, 2);
             Envelope e2 = new Envelope(9, 9);
-            string expected = "Yes, envelope (10x2) fits into another.";
-            string actual = e2.IsFitsIntoThisEnvelope(e1);
+            bool expected = true;
+            bool actual = e2.IsFitsIntoThisEnvelope(e1);
             Assert.AreEqual(expected, actual);
         }
     }

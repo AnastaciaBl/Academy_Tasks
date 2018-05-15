@@ -1,11 +1,29 @@
 ﻿using System;
+using CheckUserInput;
 
 namespace Task2
 {
     class Envelope
     {
-        public double A { get; private set; }
-        public double B { get; private set; }
+        private const string ArgumentErrorString = "Envelope`s side length should be a positive number.";
+        private double a, b;
+        public double A
+        {
+            get { return a; }
+            private set
+            {
+                if (CheckDoubleNumbers.IsPositiveDoubleNumber(value)) a = value;
+                else throw new ArgumentException(ArgumentErrorString);
+            }
+        }
+        public double B {
+            get { return b; }
+            private set
+            {
+                if (CheckDoubleNumbers.IsPositiveDoubleNumber(value)) b = value;
+                else throw new ArgumentException(ArgumentErrorString);
+            }
+        }
 
         public Envelope(double a, double b)
         {
@@ -21,11 +39,11 @@ namespace Task2
             }
         }
 
-        public string IsFitsIntoThisEnvelope(Envelope otherEnvelope)
+        public bool IsFitsIntoThisEnvelope(Envelope otherEnvelope)
         {
             if (isFitsIntoFirstCondition(otherEnvelope) || isFitsIntoSecondCondition(otherEnvelope))
-                return string.Format("Yes, envelope ({0}x{1}) fits into another.", otherEnvelope.A, otherEnvelope.B);
-            else return string.Format("No, envelope ({0}x{1}) does not fits into another.", otherEnvelope.A, otherEnvelope.B);
+                return true;
+            else return false;
         }
 
         private bool isFitsIntoFirstCondition(Envelope other)

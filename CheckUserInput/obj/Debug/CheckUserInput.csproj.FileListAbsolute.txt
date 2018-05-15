@@ -1,0 +1,5 @@
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\CheckUserInput\bin\Debug\CheckUserInput.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\CheckUserInput\bin\Debug\CheckUserInput.pdb
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\CheckUserInput\obj\Debug\CheckUserInput.csprojResolveAssemblyReference.cache
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\CheckUserInput\obj\Debug\CheckUserInput.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\CheckUserInput\obj\Debug\CheckUserInput.pdb

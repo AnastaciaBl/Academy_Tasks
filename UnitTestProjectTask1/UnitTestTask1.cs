@@ -11,7 +11,7 @@ namespace UnitTestProjectTask1
         {
             ChessBoard cb = new ChessBoard(3, 3);
             string actual = cb.ToString();
-            string expected = "* *\n * \n* *\n";
+            string expected = "* *\r\n * \r\n* *\r\n";
             Assert.AreEqual(expected, actual);
         }
 
@@ -20,7 +20,7 @@ namespace UnitTestProjectTask1
         {
             ChessBoard cb = new ChessBoard(2, 2);
             string actual = cb.ToString();
-            string expected = "* \n *\n";
+            string expected = "* \r\n *\r\n";
             Assert.AreEqual(expected, actual);
         }
 
@@ -29,7 +29,7 @@ namespace UnitTestProjectTask1
         {
             ChessBoard cb = new ChessBoard(3, 2);
             string actual = cb.ToString();
-            string expected = "* \n *\n* \n";
+            string expected = "* \r\n *\r\n* \r\n";
             Assert.AreEqual(expected, actual);
         }
 
@@ -38,7 +38,7 @@ namespace UnitTestProjectTask1
         {
             ChessBoard cb = new ChessBoard(2, 3);
             string actual = cb.ToString();
-            string expected = "* *\n * \n";
+            string expected = "* *\r\n * \r\n";
             Assert.AreEqual(expected, actual);
         }
     }

@@ -4,3 +4,5 @@ C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task
 C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache
 C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task2\obj\Debug\Task2.exe
 C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task2\obj\Debug\Task2.pdb
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task2\bin\Debug\CheckUserInput.dll
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Task2\bin\Debug\CheckUserInput.pdb
