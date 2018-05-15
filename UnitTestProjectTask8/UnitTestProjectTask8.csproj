@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CheckUserInput">
+      <HintPath>..\CheckUserInput\bin\Debug\CheckUserInput.dll</HintPath>
+    </Reference>
     <Reference Include="Project">
       <HintPath>..\Project\bin\Debug\Project.exe</HintPath>
     </Reference>

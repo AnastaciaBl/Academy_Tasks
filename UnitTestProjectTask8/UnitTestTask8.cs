@@ -8,22 +8,8 @@ namespace UnitTestProjectTask8
     public class UnitTestTask8
     {
         [TestMethod]
-        public void TestMethodNegativeBounds()
+        public void FibonacciNumbersBoundsWithFibonacciNumber()
         {
-            // исходные данные
-            int a = -5;
-            int b = 10;
-            string expected = "0,1,1,2,3,5,8";
-
-            FibonacciNumbers fb = new FibonacciNumbers(a, b);
-            string actual = fb.ToString();
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestMethodBoundsWithFibonacciNumber()
-        {
-            // исходные данные
             int a = 5;
             int b = 144;
             string expected = "5,8,13,21,34,55,89,144";
@@ -34,9 +20,8 @@ namespace UnitTestProjectTask8
         }
 
         [TestMethod]
-        public void TestMethodBoundsWithOneNumber()
+        public void FibonacciNumbersBoundsWithOneNumber()
         {
-            // исходные данные
             int a = 5;
             int b = 5;
             string expected = "5";
@@ -47,9 +32,8 @@ namespace UnitTestProjectTask8
         }
 
         [TestMethod]
-        public void TestMethodBoundsWithSmallUsualValues()
+        public void FibonacciNumbersBoundsWithSmallUsualValues()
         {
-            // исходные данные
             int a = 4;
             int b = 50;
             string expected = "5,8,13,21,34";
@@ -60,9 +44,8 @@ namespace UnitTestProjectTask8
         }
 
         [TestMethod]
-        public void TestMethodBoundsWithBigUsualValues()
+        public void FibonacciNumbersBoundsWithBigUsualValues()
         {
-            // исходные данные
             double a = 39088168;
             double b = 53316291174;
             string expected = "39088169,63245986,102334155,165580141,267914296,433494437," +
@@ -71,6 +54,24 @@ namespace UnitTestProjectTask8
 
             FibonacciNumbers fb = new FibonacciNumbers(a, b);
             string actual = fb.ToString();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void FibonacciNumbersFindFibonacciByIndex_5()
+        {
+            FibonacciNumbers fb = new FibonacciNumbers();
+            double actual = fb.FindFibonacciNumber(5);
+            double expected = 5;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void FibonacciNumbersFindFibonacciByIndex_11()
+        {
+            FibonacciNumbers fb = new FibonacciNumbers();
+            double actual = fb.FindFibonacciNumber(11);
+            double expected = 89;
             Assert.AreEqual(expected, actual);
         }
     }
