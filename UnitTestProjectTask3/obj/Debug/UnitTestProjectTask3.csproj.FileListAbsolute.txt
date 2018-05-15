@@ -4,3 +4,4 @@ C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\Unit
 C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask3\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask3\obj\Debug\UnitTestProjectTask3.dll
 C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask3\obj\Debug\UnitTestProjectTask3.pdb
+C:\Users\Nastya\Documents\Visual Studio 2015\Projects\Project\Academy_Tasks\UnitTestProjectTask3\obj\Debug\UnitTestProjectTask3.csprojResolveAssemblyReference.cache

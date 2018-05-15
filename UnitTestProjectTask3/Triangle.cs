@@ -4,26 +4,19 @@ namespace Task3
 {
     class Triangle:IComparable<Triangle>
     {
-        public string Name { get; private set; }
-        public double A { get; private set; }
-        public double B { get; private set; }
-        public double C { get; private set; }
-        public double Area { get; private set; }
+        public string Name { get; }
+        private readonly double a;
+        public readonly double b;
+        public readonly double c;
+        public double Area { get; }
 
-        public Triangle(string name, double a, double b, double c)
+        public Triangle(string name, double _a, double _b, double _c)
         {
             Name = name;
-            A = a;
-            B = b;
-            C = c;
-            Area = findAreaOfTriangle();
-        }
-
-        public double findAreaOfTriangle()
-        {
-            double p = 0.5 * (A + B + C);
-            double area = Math.Sqrt(p * (p - A) * (p - B) * (p - C));
-            return Math.Round(area, 2);
+            a = _a;
+            b = _b;
+            c = _c;
+            Area = findAreaOfTriangleByGeroneFormula();
         }
 
         public int CompareTo(Triangle other)
@@ -40,6 +33,13 @@ namespace Task3
         {
             string str = string.Format("[{0}]: {1} cm", Name, Area);
             return str;
+        }
+
+        private double findAreaOfTriangleByGeroneFormula()
+        {
+            double p = 0.5 * (a + b + c);
+            double area = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            return Math.Round(area, 2);
         }
     }
 }

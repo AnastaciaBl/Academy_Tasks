@@ -5,13 +5,13 @@ using System;
 namespace UnitTestProjectTask3
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestTask3
     {
         [TestMethod]
         public void AreaOfTriangle_3x2x4_()
         {
             Triangle t = new Triangle("t1", 3, 2, 4);
-            double actual = t.findAreaOfTriangle();
+            double actual = t.Area;
             double expected = 2.9;
             Assert.AreEqual(expected, actual);
         }
@@ -20,7 +20,7 @@ namespace UnitTestProjectTask3
         public void AreaOfTriangle_6x4x7_()
         {
             Triangle t = new Triangle("t1", 6, 4, 7);
-            double actual = t.findAreaOfTriangle();
+            double actual = t.Area;
             double expected = 11.98;
             Assert.AreEqual(expected, actual);
         }

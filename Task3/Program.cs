@@ -5,13 +5,13 @@ namespace Task3
 {
     class Program
     {
-        private static string startInfo = "Task #3. Find area of triangles.";
-        private static string inputLine = "Input <triangle name> <A length> <B length> <C length> please.";
-        private static string correctInput = "Input a right information, please.";
-        private static string errorSides = "This triangle can`t exist.";
-        private static string startAgain = "Do you want to start a program again? y/n";
-        private static string inputAgain = "Do you want to input another triangle? y/n";
-        private static string answer = "Answer:";
+        private const string StartInfo = "Task #3. Find area of triangles.";
+        private const string InputLine = "Input <triangle name> <A length> <B length> <C length> please.";
+        private const string CorrectInput = "Input a right information, please.";
+        private const string ErrorSides = "This triangle can`t exist.";
+        private const string StartAgain = "Do you want to start a program again? y/n";
+        private const string InputAgain = "Do you want to input another triangle? y/n";
+        private const string Answer = "Answer:";
 
         static void Main(string[] args)
         {
@@ -20,38 +20,29 @@ namespace Task3
             {
                 string endInput = "y";
                 List<Triangle> triangles = new List<Triangle>();
-                Console.WriteLine(startInfo);
+                Console.WriteLine(StartInfo);
                 while (true && (endInput.ToLower() == "y" || endInput.ToLower() == "yes"))
                 {
-                    Console.WriteLine(inputLine);
+                    double a = 0, b = 0, c = 0;
+                    Console.WriteLine(InputLine);
                     input = Console.ReadLine();
                     string[] partsOfStr = replaceSpaces(input);
                     if (partsOfStr.Length == 4)
                     {
-                        try
-                        {
-                            if (CheckUserInput.IsCorrectSizeOfSides(Convert.ToDouble(partsOfStr[1]),
-                                Convert.ToDouble(partsOfStr[2]), Convert.ToDouble(partsOfStr[3])))
-                            {
-                                triangles.Add(new Triangle(partsOfStr[0], Convert.ToDouble(partsOfStr[1]),
-                                    Convert.ToDouble(partsOfStr[2]), Convert.ToDouble(partsOfStr[3])));
-                                Console.WriteLine(inputAgain);
-                                endInput = Console.ReadLine();
-                            }
-                            else Console.WriteLine(errorSides);
-                        }
-                        catch { Console.WriteLine(correctInput); }
-                    }
-                    else
-                    {
-                        Console.WriteLine(correctInput);
+                        if (IsAllSidesNumbers(partsOfStr, ref a, ref b, ref c))
+                            if (CheckUserInput.IsCorrectSizeOfSides(a, b, c))
+                                triangles.Add(new Triangle(partsOfStr[0], a, b, c));
+                            else Console.WriteLine(ErrorSides);
+                        else Console.WriteLine(CorrectInput);
+                        Console.WriteLine(InputAgain);
+                        endInput = Console.ReadLine();
                     }
                 }
-                Console.WriteLine(answer);
+                Console.WriteLine(Answer);
                 triangles.Sort();
                 foreach (Triangle t in triangles)
                     Console.WriteLine(t.ToString());
-                Console.WriteLine(startAgain);
+                Console.WriteLine(StartAgain);
                 endCheck = Console.ReadLine();
             } while (endCheck.ToLower() == "y");
         }
@@ -72,6 +63,14 @@ namespace Task3
                     return line.Split(' ');
                 }
             }
+        }
+
+        private static bool IsAllSidesNumbers(string[] partsOfStr, ref double a, ref double b, ref double c)
+        {
+            if (Double.TryParse(partsOfStr[1], out a) && Double.TryParse(partsOfStr[2], out b) &&
+                Double.TryParse(partsOfStr[3], out c))
+                return true;
+            else return false;
         }
     }
 }
