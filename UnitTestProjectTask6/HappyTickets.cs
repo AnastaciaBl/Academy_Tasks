@@ -5,37 +5,46 @@ namespace Task6
 {
     class HappyTickets
     {
-        public List<string> Tickets { get; private set; }
-        private ICount countModel;
         public int AmountOfHappyTickets { get; private set; }
+        private IHappyTicketCounter countModel;
+        private const int AmountOfNumbersInTicket = 6;
+        private const int AmountOfTickets = 1000000;
 
-        public HappyTickets(List<string> _tickets, ICount _countModel)
+        public HappyTickets(IHappyTicketCounter _countModel)
         {
-            Tickets = _tickets;
             countModel = _countModel;
             AmountOfHappyTickets = countHappyTickets();
         }
 
-        public int countHappyTickets()
+        private int countHappyTickets()
         {
             int amountOfHappyTickets = 0;
-            for(int i=0;i<Tickets.Count;i++)
+            var tempNumber = new int[AmountOfNumbersInTicket];
+            for (int i = 0; i < AmountOfTickets; i++)
             {
-                int[] temp = createSetOfNumbersFromString(Tickets[i]);
-                if (countModel.IsHappyNumber(temp))
+                if (countModel.IsHappyNumber(tempNumber))
                     amountOfHappyTickets++;
+                if(i != AmountOfTickets - 1)
+                    createNumberOfTicket(tempNumber);
             }
             return amountOfHappyTickets;
         }
 
-        private int[] createSetOfNumbersFromString(string str)
+        private void createNumberOfTicket(int[] ticket)
         {
-            int[] setOfNumbers = new int[str.Length];
-            for(int i=0;i<setOfNumbers.Length;i++)
+            int indexOfPositionInNumber = AmountOfNumbersInTicket - 1;
+            if (ticket[indexOfPositionInNumber] != 9)
+                ticket[indexOfPositionInNumber]++;
+            else
             {
-                setOfNumbers[i] = (int)Char.GetNumericValue(str[i]);
+                //when indexOfPositionInNumber == 0 ticket looks like "999999" so it shouldn`t try to create "1000000" ticket
+                while (ticket[indexOfPositionInNumber] == 9)
+                {
+                    ticket[indexOfPositionInNumber] = 0;
+                    indexOfPositionInNumber--;
+                }
+                ticket[indexOfPositionInNumber]++;
             }
-            return setOfNumbers;
         }
     }
 }

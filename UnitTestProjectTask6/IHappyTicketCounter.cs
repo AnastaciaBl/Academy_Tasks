@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task6
 {
-    interface ICount
+    interface IHappyTicketCounter
     {
         bool IsHappyNumber(int[] ticket);
     }

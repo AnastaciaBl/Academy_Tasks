@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task6
 {
-    class MoskovCount : ICount
+    class MoskovCount : IHappyTicketCounter
     {
         public bool IsHappyNumber(int[] ticket)
         {

@@ -51,7 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="HappyTickets.cs" />
-    <Compile Include="ICount.cs" />
+    <Compile Include="IHappyTicketCounter.cs" />
     <Compile Include="MoskovCount.cs" />
     <Compile Include="PiterCount.cs" />
     <Compile Include="UnitTestTask6.cs" />
