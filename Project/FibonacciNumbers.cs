@@ -30,7 +30,7 @@ namespace Task8
             }
         }
         private double lowerIndex = 0;
-        private double upperIndex = 100;
+        private double upperIndex = 50;
 
         public FibonacciNumbers() { }
 
@@ -54,15 +54,18 @@ namespace Task8
         {
             List<double> numbers = new List<double>();
             double indexOfFirstNumber = findIndexOfFirstNumber();
-            double number = FindFibonacciNumber(indexOfFirstNumber);
-            double nextNumber = FindFibonacciNumber(indexOfFirstNumber + 1);
-            numbers.Add(number);
-            while(nextNumber <= UpperBound)
+            if (indexOfFirstNumber != -1)
             {
-                numbers.Add(nextNumber);
-                double temp = nextNumber;
-                nextNumber += number;
-                number = temp;
+                double number = FindFibonacciNumber(indexOfFirstNumber);
+                double nextNumber = FindFibonacciNumber(indexOfFirstNumber + 1);
+                numbers.Add(number);
+                while (nextNumber <= UpperBound)
+                {
+                    numbers.Add(nextNumber);
+                    double temp = nextNumber;
+                    nextNumber += number;
+                    number = temp;
+                }
             }
             return numbers.ToArray();
         }
@@ -77,7 +80,9 @@ namespace Task8
 
         private double findIndexOfNumberInInterval()
         {
+            List<double> indexes = new List<double>();
             double index = Round((upperIndex - lowerIndex) / 2);
+            indexes.Add(index);
             double number = FindFibonacciNumber(index);
             while (isNumberOutOfBounds(number))
             {
@@ -93,6 +98,13 @@ namespace Task8
                 else
                     break;
                 index = index = Round((upperIndex - lowerIndex) / 2);
+                if (!indexes.Contains(index))
+                    indexes.Add(index);
+                else
+                {
+                    index = -1;
+                    break;
+                }
                 number = FindFibonacciNumber(index);
             }
             return index;
@@ -136,14 +148,18 @@ namespace Task8
 
         private string createTextRepresentationOfFibonacciNumbers()
         {
-            StringBuilder str = new StringBuilder();
-            for (int i = 0; i < Numbers.Length - 1; i++)
+            if (Numbers.Length != 0)
             {
-                str.Append(Numbers[i]);
-                str.Append(",");
+                StringBuilder str = new StringBuilder();
+                for (int i = 0; i < Numbers.Length - 1; i++)
+                {
+                    str.Append(Numbers[i]);
+                    str.Append(",");
+                }
+                str.Append(Numbers[Numbers.Length - 1]);
+                return str.ToString();
             }
-            str.Append(Numbers[Numbers.Length - 1]);
-            return str.ToString();
+            else return "This diapasone hasn`t fibonacci numbers.";
         }
 
         public override string ToString()

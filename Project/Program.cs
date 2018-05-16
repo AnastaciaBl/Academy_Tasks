@@ -21,6 +21,7 @@ namespace Task8
                 inputBounds(out lowerBound, "lower");
                 inputBounds(out upperBound, "upper");
                 FibonacciNumbers f = new FibonacciNumbers(lowerBound, upperBound);
+                //FibonacciNumbers f = new FibonacciNumbers(lowerBound, Int64.MaxValue);
                 Console.WriteLine(string.Format(Answer, f.ToString()));
                 Console.WriteLine(StartAgain);
                 endCheck = Console.ReadLine();
