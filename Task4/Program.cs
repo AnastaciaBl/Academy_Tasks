@@ -5,13 +5,13 @@ namespace Task4
 {
     class Program
     {
-        private static string startInfo = "Task #4. File parser.";
-        private static string varInput = "1 - count word\n2 - change word";
-        private static string countWordInput = "Input <path to file> <word for count>, please.";
-        private static string changeWordInput = "Input <path to file> <word for search> <word for change>, please.";
-        private static string startAgain = "Do you want to start a program again? y/n";
-        private static string answer = "Amount of /{0}/ in the text: {1}";
-        private static string answerChange = "File was changed.";
+        private const string StartInfo = "Task #4. File parser.";
+        private const string VarInput = "1 - count word\n2 - change word";
+        private const string CountWordInput = "Input <path to file> <word for count>, please.";
+        private const string ChangeWordInput = "Input <path to file> <word for search> <word for change>, please.";
+        private const string StartAgain = "Do you want to start a program again? y/n";
+        private const string Answer = "Amount of /{0}/ in the text: {1}";
+        private const string AnswerChange = "File was changed.";
 
         static void Main(string[] args)
         {
@@ -19,8 +19,8 @@ namespace Task4
             string[] path;
             do
             {
-                Console.WriteLine(startInfo);
-                Console.WriteLine(varInput);
+                Console.WriteLine(StartInfo);
+                Console.WriteLine(VarInput);
                 string varAnswer = Console.ReadLine();
                 try
                 {
@@ -28,12 +28,9 @@ namespace Task4
                     {
                         while (true)
                         {
-                            Console.WriteLine(countWordInput);
-                            path = Console.ReadLine().Split(' ');
-                            if (!File.Exists(path[0]))
-                                throw new FileNotFoundException();
+                            path = inputParameters(CountWordInput);
                             WordCounter wordCounter = new WordCounter(path[0], path[1]);
-                            Console.WriteLine(string.Format(answer, path[1], wordCounter.AmountOfCountWordInText));
+                            Console.WriteLine(string.Format(Answer, path[1], wordCounter.AmountOfCountWordInText));
                             break;
                         }
                     }
@@ -41,12 +38,9 @@ namespace Task4
                     {
                         while (true)
                         {
-                            Console.WriteLine(changeWordInput);
-                            path = Console.ReadLine().Split(' ');
-                            if (!File.Exists(path[0]))
-                                throw new FileNotFoundException();
+                            path = inputParameters(ChangeWordInput);
                             WordChange wordChange = new WordChange(path[0], path[1], path[2]);
-                            Console.WriteLine(answerChange);
+                            Console.WriteLine(AnswerChange);
                             break;
                         }
                     }
@@ -55,13 +49,23 @@ namespace Task4
                 {
                     Console.WriteLine(ex.Message);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    Console.WriteLine(countWordInput);
+                    Console.WriteLine(CountWordInput);
                 }
-                Console.WriteLine(startAgain);
+                Console.WriteLine(StartAgain);
                 endCheck = Console.ReadLine();
             } while (endCheck.ToLower() == "y");
+        }
+
+        private static string[] inputParameters(string instructions)
+        {
+            string[] path;
+            Console.WriteLine(instructions);
+            path = Console.ReadLine().Split(' ');
+            if (!File.Exists(path[0]))
+                throw new FileNotFoundException();
+            return path;
         }
     }
 }
