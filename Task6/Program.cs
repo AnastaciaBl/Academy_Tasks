@@ -7,11 +7,8 @@ namespace Task6
     class Program
     {
         private const string StartInfo = "Task #6. Find amount of happy tickets.";
-        private const string WrongInputInfo = "It should be ****** number.";
-        private const string NumberInput = "Input a ****** ticket number, please.";
         private const string PathInput = "Input a path to file, please.";
         private const string StartAgain = "Do you want to start a program again? y/n";
-        private const string InputAgain = "Do you want to input another number? y/n";
         private const string Answer = "Amount of happy tickets: {0}";
 
         static void Main(string[] args)
