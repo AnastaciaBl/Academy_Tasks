@@ -4,8 +4,8 @@ namespace Task5
 {
     class Number
     {
-        public string InputNumber { get; private set; }
-        public string ResultNumber { get; private set; }
+        public string InputNumber { get; }
+        public string ResultNumber { get; }
         private List<string> partsOfNumber;
 
         public Number(string number)
@@ -24,7 +24,7 @@ namespace Task5
             {
                 for(int i=0;i<partsOfNumber.Count;i++)
                 {
-                    ICreateStringRepresentation[] stringRepresent = new ICreateStringRepresentation[]
+                    IStringRepresentation[] stringRepresent = new IStringRepresentation[]
                     {
                         new Hundreds(),
                         new Tens(),

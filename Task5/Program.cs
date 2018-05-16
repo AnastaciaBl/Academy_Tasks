@@ -4,11 +4,11 @@ namespace Task5
 {
     class Program
     {
-        private static string startInfo = "Task #6. Turn integer number into string.";
-        private static string wrongInputInfo = "It should be a integer number [from 0 to 999].";
-        private static string numberInput = "Input a integer number [from 0 to 999], please.";
-        private static string startAgain = "Do you want to start a program again? y/n";
-        private static string answer = "Answer: {0}";
+        private const string startInfo = "Task #6. Turn integer number into string.";
+        private const string wrongInputInfo = "It should be a integer number [from 0 to 999].";
+        private const string numberInput = "Input a integer number [from 0 to 999], please.";
+        private const string startAgain = "Do you want to start a program again? y/n";
+        private const string answer = "Answer: {0}";
 
         static void Main(string[] args)
         {
@@ -20,7 +20,8 @@ namespace Task5
                 {
                     Console.WriteLine(numberInput);
                     number = Console.ReadLine();
-                    if (CheckUserInput.IsIntegerNumber(number))
+                    int checkResult;
+                    if (Int32.TryParse(number, out checkResult))
                         break;
                     else Console.WriteLine(wrongInputInfo);
                 }

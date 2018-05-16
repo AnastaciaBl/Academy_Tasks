@@ -1,6 +1,6 @@
 ﻿namespace Task5
 {
-    interface ICreateStringRepresentation
+    interface IStringRepresentation
     {
         string ReturnStringValue(string str);
     }

@@ -2,7 +2,7 @@
 
 namespace Task5
 {
-    class Units: ICreateStringRepresentation
+    class Units: IStringRepresentation
     {
         private string[] units = new string[] { "", "один ", "два ", "три ", "четыре ", "пять ", "шесть ",
             "семь ", "восемь ", "девять " };

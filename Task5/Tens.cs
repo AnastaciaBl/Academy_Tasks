@@ -2,7 +2,7 @@
 
 namespace Task5
 {
-    class Tens: ICreateStringRepresentation
+    class Tens: IStringRepresentation
     {
         private string[] tens = new string[] { "", "десять ", "двадцать ", "тридцать ", "сорок ", "пятьдесят ", "шестьдесят ",
             "семьдесят ", "восемьдесят ", "девяносто " };
